@@ -1,6 +1,15 @@
 <template>
-  <div>Page one</div>
+  <TestComponent />
 </template>
+
+<script>
+import TestComponent from "@/components/TestComponent.vue";
+export default {
+  components: {
+    TestComponent,
+  },
+};
+</script>
 
 <style>
 #app {
@@ -9,6 +18,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 </style>
