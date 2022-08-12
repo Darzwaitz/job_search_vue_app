@@ -1,23 +1,9 @@
 <template>
-  <TestComponent />
+  <h1>TEMP</h1>
 </template>
 
 <script>
-import TestComponent from "@/components/TestComponent.vue";
 export default {
-  components: {
-    TestComponent,
-  },
+  name: "App",
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 80px;
-}
-</style>
