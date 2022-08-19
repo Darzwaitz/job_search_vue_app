@@ -33,7 +33,13 @@ export default {
     return {
       company: "Careers",
       url: "https://mail.yahoo.com",
-      menuItems: ["Teamz", "Life at company", "How e hire", "Studentz", "Jobz"],
+      menuItems: [
+        "Teamz",
+        "Life at company",
+        "How we hire",
+        "Studentz",
+        "Jobz",
+      ],
     };
   },
 };

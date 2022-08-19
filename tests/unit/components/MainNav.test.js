@@ -8,4 +8,19 @@ describe("MainNav", () => {
     const wrapper = mount(MainNav);
     expect(wrapper.text()).toMatch("Careers");
   });
+
+  it("displays menu items for navigation", () => {
+    const wrapper = mount(MainNav);
+    const navigationMenuItemz = wrapper.findAll("li");
+    // console.log(navigationMenuItemz);
+    const navigationMenuTextz = navigationMenuItemz.map((item) => item.text());
+    // console.log(navigationMenuTextz);
+    expect(navigationMenuTextz).toEqual([
+      "Teamz",
+      "Life at company",
+      "How we hire",
+      "Studentz",
+      "Jobz",
+    ]);
+  });
 });
