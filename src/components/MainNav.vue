@@ -10,28 +10,14 @@
 
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">
-            <li class="h-full">
-              <a href="http://" class="flex items-center h-full py-2.5"
-                >Teams</a
-              >
-            </li>
-            <li class="h-full ml-9">
-              <a href="http://" class="flex items-center h-full py-2.5"
-                >Life at company</a
-              >
-            </li>
-            <li class="h-full ml-9">
-              <a href="http://" class="flex items-center h-full py-2.5"
-                >How we hire</a
-              >
-            </li>
-            <li class="h-full ml-9">
-              <a href="http://" class="flex items-center h-full py-2.5"
-                >Studentz</a
-              >
-            </li>
-            <li class="h-full ml-9">
-              <a href="http://" class="flex items-center h-full py-2.5">Jobz</a>
+            <li
+              v-for="menuItem in menuItems"
+              :key="menuItem"
+              class="h-full ml-9 first:ml-0"
+            >
+              <a href="" class="flex items-center h-full py-2.5">{{
+                menuItem
+              }}</a>
             </li>
           </ul>
         </nav>
@@ -47,6 +33,7 @@ export default {
     return {
       company: "Careers",
       url: "https://mail.yahoo.com",
+      menuItems: ["Teamz", "Life at company", "How e hire", "Studentz", "Jobz"],
     };
   },
 };
