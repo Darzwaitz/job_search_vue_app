@@ -4,7 +4,37 @@
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
-        <a href="/" class="flex items-center h-full text-xl">{{ company }}</a>
+        <a :href="url" class="flex items-center h-full text-xl">{{
+          company
+        }}</a>
+
+        <nav class="h-full ml-12">
+          <ul class="flex h-full p-0 m-0 list-none">
+            <li class="h-full">
+              <a href="http://" class="flex items-center h-full py-2.5"
+                >Teams</a
+              >
+            </li>
+            <li class="h-full ml-9">
+              <a href="http://" class="flex items-center h-full py-2.5"
+                >Life at company</a
+              >
+            </li>
+            <li class="h-full ml-9">
+              <a href="http://" class="flex items-center h-full py-2.5"
+                >How we hire</a
+              >
+            </li>
+            <li class="h-full ml-9">
+              <a href="http://" class="flex items-center h-full py-2.5"
+                >Studentz</a
+              >
+            </li>
+            <li class="h-full ml-9">
+              <a href="http://" class="flex items-center h-full py-2.5">Jobz</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
@@ -16,6 +46,7 @@ export default {
   data() {
     return {
       company: "Careers",
+      url: "https://mail.yahoo.com",
     };
   },
 };
