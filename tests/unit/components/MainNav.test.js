@@ -11,7 +11,10 @@ describe("MainNav", () => {
 
   it("displays menu items for navigation", () => {
     const wrapper = mount(MainNav);
-    const navigationMenuItemz = wrapper.findAll("li");
+    // [] within findAll, used as part of test utils
+    const navigationMenuItemz = wrapper.findAll(
+      "[data-test='main-nav-list-item']"
+    );
     // console.log(navigationMenuItemz);
     const navigationMenuTextz = navigationMenuItemz.map((item) => item.text());
     // console.log(navigationMenuTextz);
