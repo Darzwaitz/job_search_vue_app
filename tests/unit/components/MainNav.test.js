@@ -26,4 +26,36 @@ describe("MainNav", () => {
       "Jobz",
     ]);
   });
+
+  describe("when user is logged out", () => {
+    it("prompts the user to sign in", () => {
+      const wrapper = mount(MainNav, {
+        data() {
+          return {
+            isLoggedIn: false,
+          };
+        },
+      });
+      const loginButton = wrapper.findComponent({ name: "ActionButton" });
+      const profileImage = wrapper.findComponent({ name: "ProfileImage" });
+      expect(loginButton.exists()).toBe(true);
+      expect(profileImage.exists()).toBe(false);
+    });
+  });
+
+  describe("when user logs in", () => {
+    it("displays user profile picture", () => {
+      const wrapper = mount(MainNav, {
+        data() {
+          return {
+            isLoggedIn: true,
+          };
+        },
+      });
+      const loginButton = wrapper.findComponent({ name: "ActionButton" });
+      const profileImage = wrapper.findComponent({ name: "ProfileImage" });
+      expect(loginButton.exists()).toBe(false);
+      expect(profileImage.exists()).toBe(true);
+    });
+  });
 });
