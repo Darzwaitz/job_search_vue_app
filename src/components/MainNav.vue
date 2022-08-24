@@ -52,7 +52,7 @@ export default {
         "Studentz",
         "Jobz",
       ],
-      isLoggedIn: true,
+      isLoggedIn: false,
     };
   },
 };
