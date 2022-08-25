@@ -11,7 +11,7 @@ export default {
   name: "ProfileImage",
   data() {
     return {
-      imageLink: "../assets/imgs/profile-pic-pexels.jpg",
+      imageLink: "./assets/imgs/profile-pic-pexels.jpg",
     };
   },
 };
