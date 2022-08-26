@@ -2,7 +2,7 @@
   <button
     class="px-5 py-3 font-medium text-white border-0 rounded bg-brand-blue-1 hover:shadow-blue"
   >
-    Sign In
+    {{ text }}
   </button>
 </template>
 
@@ -10,5 +10,6 @@
 export default {
   // name here shows name in Vue devtoolz
   name: "ActionButton",
+  props: ["text"],
 };
 </script>
