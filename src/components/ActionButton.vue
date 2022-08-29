@@ -13,8 +13,10 @@ export default {
   computed: {
     buttonClass() {
       return {
-        primary: this.type === "primary",
-        secondary: this.type === "secondary",
+        // primary: this.type === "primary",
+        // secondary: this.type === "secondary",
+        // refactored
+        [this.type]: true,
       };
     },
   },
