@@ -17,6 +17,10 @@ export default {
       type: String,
       required: false,
       default: "primary",
+      // 'validator' is fixed Vue syntax
+      validator(value) {
+        return ["primary", "secondary"].includes(value);
+      },
     },
   },
   computed: {
