@@ -5,6 +5,11 @@ describe("Subnav", () => {
   describe("When user iz on job page", () => {
     it("displays job count", () => {
       const wrapper = mount(Subnav, {
+        global: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
         data() {
           return {
             onJobResultsPage: true,
@@ -19,6 +24,11 @@ describe("Subnav", () => {
   describe("When user iz not on job page", () => {
     it("does NOT display job count", () => {
       const wrapper = mount(Subnav, {
+        global: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
         data() {
           return {
             onJobResultsPage: false,
