@@ -47,5 +47,17 @@ describe("MainNav", () => {
       profileImage = wrapper.find("[data-test='profile-image']");
       expect(profileImage.exists()).toBe(true);
     });
+
+    it("displayz subnavigation menu with additional information", async () => {
+      const wrapper = shallowMount(MainNav);
+      let subnav = wrapper.find("[data-test='subnav']");
+      expect(subnav.exists()).toBe(false);
+
+      const loginButton = wrapper.find("[data-test='login-button']");
+      await loginButton.trigger("click");
+
+      subnav = wrapper.find("[data-test='subnav']");
+      expect(subnav.exists()).toBe(true);
+    });
   });
 });
