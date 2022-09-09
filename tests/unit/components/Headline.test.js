@@ -11,4 +11,22 @@ describe("Headline", () => {
 
     jest.useRealTimers();
   });
+
+  it("changez action verb at a consistent interval", () => {
+    jest.useFakeTimers("legacy");
+    mount(Headline);
+    expect(setInterval).toHaveBeenCalled();
+
+    jest.useRealTimers();
+  });
+
+  it("swapz action verb after fitrst interval", () => {
+    jest.useFakeTimers("legacy");
+    const wrapper = mount(Headline);
+    jest.runOnlyPendingTimers();
+
+    const actionPhrase = wrapper.find("[data-test='action-phrase']");
+    expect(actionPhrase.text()).toBe("Create for everyone");
+    jest.useRealTimers();
+  });
 });
