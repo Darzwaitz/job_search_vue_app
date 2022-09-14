@@ -21,7 +21,7 @@ describe("Headline", () => {
     jest.useRealTimers();
   });
 
-  it("swapz action verb after fitrst interval", async () => {
+  it("swapz action verb after first interval", async () => {
     jest.useFakeTimers("legacy");
     const wrapper = mount(Headline);
     jest.runOnlyPendingTimers();
