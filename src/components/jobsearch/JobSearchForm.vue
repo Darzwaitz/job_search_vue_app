@@ -9,7 +9,7 @@
         <label class="absolute left-0 -top-10" for="">Role</label>
         <text-input
           placeholder="Software Engineer"
-          @handle-input="updateRole"
+          @handle-input="role = $event"
         />
       </div>
       <span
@@ -18,7 +18,7 @@
       >
       <div class="relative flex items-center flex-1 h-full pl-3">
         <label class="absolute left-0 -top-10" for="">Where?</label>
-        <text-input placeholder="Berlin" @handle-input="updateLocation" />
+        <text-input placeholder="Berlin" @handle-input="location = $event" />
       </div>
     </div>
     <action-button text="Search" type="secondary" class="rounded-r-3xl" />
@@ -40,13 +40,13 @@ export default {
       location: "",
     };
   },
-  methods: {
-    updateRole(payload) {
-      this.role = payload;
-    },
-    updateLocation(payload) {
-      this.location = payload;
-    },
-  },
+  // methods: {
+  //   updateRole(payload) {
+  //     this.role = payload;
+  //   },
+  //   updateLocation(payload) {
+  //     this.location = payload;
+  //   },
+  // },
 };
 </script>
