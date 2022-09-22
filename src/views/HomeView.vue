@@ -1,15 +1,15 @@
 <template>
-  <h1 class="text-6xl font-bold">Home VieW</h1>
+  <hero />
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+import Hero from "@/components/jobsearch/Hero.vue";
 
 export default {
   name: "HomeView",
-  // components: {
-  //   HelloWorld
-  // }
+  components: {
+    Hero,
+  },
 };
 </script>
