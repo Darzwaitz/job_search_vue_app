@@ -7,7 +7,7 @@
         <router-link
           :to="{ name: 'Home' }"
           class="flex items-center h-full text-xl"
-          >Carreerz</router-link
+          >Careers</router-link
         >
 
         <nav class="h-full ml-12">
