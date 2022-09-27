@@ -3,26 +3,26 @@ import { RouterLinkStub, shallowMount } from "@vue/test-utils";
 import MainNav from "@/components/navigation/MainNav.vue";
 
 describe("MainNav", () => {
-  it("displays company name", () => {
+  let wrapper;
+
+  beforeEach(() => {
     // wrapper as title is used as convention in Vue because it is the wrapper or container
-    const wrapper = shallowMount(MainNav, {
+    wrapper = shallowMount(MainNav, {
       global: {
         stubs: {
           "router-link": RouterLinkStub,
         },
       },
     });
+  });
+
+  it("displays company name", () => {
+    // wrapper as title is used as convention in Vue because it is the wrapper or container
+
     expect(wrapper.text()).toMatch("Careers");
   });
 
   it("displays menu items for navigation", () => {
-    const wrapper = shallowMount(MainNav, {
-      global: {
-        stubs: {
-          "router-link": RouterLinkStub,
-        },
-      },
-    });
     // [] within findAll, used as part of test utils
     const navigationMenuItemz = wrapper.findAll(
       "[data-test='main-nav-list-item']"
