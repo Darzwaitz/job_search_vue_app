@@ -4,16 +4,19 @@ import Subnav from "@/components/navigation/Subnav";
 describe("Subnav", () => {
   describe("When user iz on job page", () => {
     it("displays job count", () => {
+      const $route = {
+        name: "JobResults",
+      };
+
       const wrapper = mount(Subnav, {
         global: {
+          mocks: {
+            // $route: $route
+            $route,
+          },
           stubs: {
             FontAwesomeIcon: true,
           },
-        },
-        data() {
-          return {
-            onJobResultsPage: true,
-          };
         },
       });
       const jobCount = wrapper.find("[data-test='job-count']");
@@ -23,16 +26,18 @@ describe("Subnav", () => {
 
   describe("When user iz not on job page", () => {
     it("does NOT display job count", () => {
+      const $route = {
+        name: "Home",
+      };
       const wrapper = mount(Subnav, {
         global: {
+          mocks: {
+            // $route: $route
+            $route,
+          },
           stubs: {
             FontAwesomeIcon: true,
           },
-        },
-        data() {
-          return {
-            onJobResultsPage: false,
-          };
         },
       });
       const jobCount = wrapper.find("[data-test='job-count']");
