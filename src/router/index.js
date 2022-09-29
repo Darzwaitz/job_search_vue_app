@@ -4,8 +4,12 @@ import { createRouter, createWebHashHistory } from "vue-router";
 // import JobView from "@/views/JobView.vue";
 
 const HomeView = () => import("@/views/HomeView.vue");
-const JobResultsView = () => import("@/views/JobResultsView.vue");
-const JobView = () => import("@/views/JobView.vue");
+// same chunk name "jobs" - both filez lazy loaded together
+// file loaded in Network is "jobs.js"
+const JobResultsView = () =>
+  import(/* webpackChunkName: "jobs" */ "@/views/JobResultsView.vue");
+const JobView = () =>
+  import(/* webpackChunkName: "jobs" */ "@/views/JobView.vue");
 
 // routes sent into router
 const routes = [
