@@ -1,17 +1,13 @@
 <template>
-  <div class="about">
-    <h1 class="text-6xl font-bold">Job resultz view</h1>
-    <button @click="goToHome">Go to home page</button>
-  </div>
+  <job-filters-sidebar></job-filters-sidebar>
 </template>
 
 <script>
+import JobFiltersSidebar from "@/components/jobresults/jobfilterssidebar/JobFiltersSidebar.vue";
 export default {
   name: "JobResultzView",
-  methods: {
-    goToHome() {
-      this.$router.push({ name: "Home" }); // path: "/"
-    },
+  components: {
+    JobFiltersSidebar,
   },
 };
 </script>
