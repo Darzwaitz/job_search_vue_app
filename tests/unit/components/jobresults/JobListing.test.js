@@ -6,6 +6,7 @@ describe("JobListing", () => {
   const createJobProps = (jobProps = {}) => ({
     title: "Vue developer",
     organization: "AirBnB",
+    locations: ["Dunoon"],
     ...jobProps,
   });
 
@@ -36,6 +37,18 @@ describe("JobListing", () => {
   });
 
   it("renderz job locationz", () => {
-    const jobProps = createJobProps({ locations: [] });
+    const jobProps = createJobProps({ locations: ["London", "Glasgow"] });
+    const wrapper = mount(JobListing, createConfig(jobProps));
+    expect(wrapper.text()).toMatch("London");
+    expect(wrapper.text()).toMatch("Glasgow");
+  });
+
+  it("renderz job qualificationz", () => {
+    const jobProps = createJobProps({
+      minimumQualifications: ["Code", "Develop"],
+    });
+    const wrapper = mount(JobListing, createConfig(jobProps));
+    expect(wrapper.text()).toMatch("Code");
+    expect(wrapper.text()).toMatch("Develop");
   });
 });
