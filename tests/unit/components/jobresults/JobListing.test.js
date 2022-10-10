@@ -34,4 +34,8 @@ describe("JobListing", () => {
     const wrapper = mount(JobListing, createConfig(jobProps));
     expect(wrapper.text()).toMatch("AirBnB");
   });
+
+  it("renderz job locationz", () => {
+    const jobProps = createJobProps({ locations: [] });
+  });
 });
