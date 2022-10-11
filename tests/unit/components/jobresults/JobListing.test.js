@@ -57,8 +57,8 @@ describe("JobListing", () => {
       id: 15,
     });
     const wrapper = mount(JobListing, createConfig(jobProps));
-    const jobPageLink = wrapper.find("[data-test='job-page-link']");
-    const toProp jobPageLink.props("to");
-    expect(toProp)toBe("/jobs/results/15")
+    const jobPageLink = wrapper.findComponent(RouterLinkStub);
+    const toProp = jobPageLink.props("to");
+    expect(toProp).toBe("/jobs/results/15");
   });
 });
