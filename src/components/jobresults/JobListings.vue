@@ -35,6 +35,16 @@ export default {
       const pageString = this.$route.query.page || "1";
       return Number.parseInt(pageString);
     },
+    previousPage() {
+      const previousPage = this.currentPage - 1;
+      const firstPage = 1;
+      return previousPage >= firstPage ? previousPage : undefined;
+    },
+    nextPage() {
+      const nextPage = this.currentPage + 1;
+      const maxPage = this.jobs.length / 10;
+      return nextPage >= maxPage ? nextPage : undefined;
+    },
     displayedJobs() {
       const pageNumber = this.currentPage;
       const firstJobIndex = (pageNumber - 1) * 10;
