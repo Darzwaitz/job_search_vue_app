@@ -57,7 +57,7 @@ export default {
     nextPage() {
       const nextPage = this.currentPage + 1;
       const maxPage = this.jobs.length / 10;
-      return nextPage >= maxPage ? nextPage : undefined;
+      return nextPage <= maxPage ? nextPage : undefined;
     },
     displayedJobs() {
       const pageNumber = this.currentPage;
