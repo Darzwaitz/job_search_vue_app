@@ -32,7 +32,6 @@ describe("JobListings", () => {
   });
 
   it("fetchez jobs", () => {
-    axios.get.mockResolvedValue({ data: [] });
     const $route = createRoute();
 
     shallowMount(JobListings, createConfig($route));
@@ -62,7 +61,6 @@ describe("JobListings", () => {
 
   describe("when query params include page number", () => {
     it("displays page number", () => {
-      axios.get.mockResolvedValue({ data: Array(15).fill({}) });
       const queryParams = { page: "3" };
       const $route = createRoute(queryParams);
       const wrapper = shallowMount(JobListings, createConfig($route));
