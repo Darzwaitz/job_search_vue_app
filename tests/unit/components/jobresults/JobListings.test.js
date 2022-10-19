@@ -5,6 +5,10 @@ jest.mock("axios");
 import JobListings from "@/components/jobresults/JobListings.vue";
 
 describe("JobListings", () => {
+  afterEach(() => {
+    axios.get.mockReset();
+  });
+
   const createRoute = (queryParams = {}) => ({
     query: {
       page: "5",
@@ -44,6 +48,7 @@ describe("JobListings", () => {
 
   describe("when query params exclude page number", () => {
     it("displays page number 1", () => {
+      axios.get.mockResolvedValue({ data: Array(15).fill({}) });
       const queryParams = { page: undefined };
       const $route = createRoute(queryParams);
       const wrapper = shallowMount(JobListings, createConfig($route));
@@ -53,6 +58,7 @@ describe("JobListings", () => {
 
   describe("when query params include page number", () => {
     it("displays page number", () => {
+      axios.get.mockResolvedValue({ data: Array(15).fill({}) });
       const queryParams = { page: "3" };
       const $route = createRoute(queryParams);
       const wrapper = shallowMount(JobListings, createConfig($route));
