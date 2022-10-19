@@ -5,6 +5,10 @@ jest.mock("axios");
 import JobListings from "@/components/jobresults/JobListings.vue";
 
 describe("JobListings", () => {
+  beforeEach(() => {
+    axios.get.mockResolvedValue({ data: Array(15).fill({}) });
+  });
+
   afterEach(() => {
     axios.get.mockReset();
   });
