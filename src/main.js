@@ -8,10 +8,11 @@ import App from "@/App.vue";
 
 import "@/assets/tailwind.css";
 import router from "@/router";
+import store from './store'
 
 library.add(faSearch);
 
-createApp(App)
+createApp(App).use(store)
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");
