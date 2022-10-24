@@ -35,7 +35,7 @@ describe("JobListings", () => {
     const $route = createRoute();
 
     shallowMount(JobListings, createConfig($route));
-    expect(axios.get).toHaveBeenCalledWith("http://localhost:3000/jobs");
+    expect(axios.get).toHaveBeenCalledWith("http://testapi.here/jobs");
   });
 
   it("createz a job listing for a maximum of 10 jobz", async () => {

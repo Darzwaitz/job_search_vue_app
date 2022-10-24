@@ -69,7 +69,9 @@ export default {
     },
   },
   async mounted() {
-    const response = await axios.get("http://localhost:3000/jobs");
+    // 'process' is global node object containing env variable filez
+    const baseUrl = process.env.VUE_APP_API_URL;
+    const response = await axios.get(`${baseUrl}/jobs`);
     this.jobs = response.data;
   },
 };
