@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     loginUser() {
-      this.isLoggedIn = true;
+      this.$store.commit("LOGIN_USER");
     },
   },
 };
