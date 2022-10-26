@@ -1,10 +1,12 @@
 import { RouterLinkStub, shallowMount } from "@vue/test-utils";
+import { createStore } from "vuex";
 
 import MainNav from "@/components/navigation/MainNav.vue";
 
 describe("MainNav", () => {
-  const createConfig = () => ({
+  const createConfig = (store) => ({
     global: {
+      plugins: [store],
       stubs: {
         "router-link": RouterLinkStub,
       },
