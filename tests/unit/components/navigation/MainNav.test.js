@@ -14,14 +14,17 @@ describe("MainNav", () => {
   });
 
   it("displays company name", () => {
+    const store = createStore();
     // wrapper as title is used as convention in Vue because it is the wrapper or container
-    const wrapper = shallowMount(MainNav, createConfig());
+    const wrapper = shallowMount(MainNav, createConfig(store));
     expect(wrapper.text()).toMatch("Careers");
   });
 
   it("displays menu items for navigation", () => {
+    const store = createStore();
+
     // [] within findAll, used as part of test utils
-    const wrapper = shallowMount(MainNav, createConfig());
+    const wrapper = shallowMount(MainNav, createConfig(store));
 
     const navigationMenuItemz = wrapper.findAll(
       "[data-test='main-nav-list-item']"
@@ -40,7 +43,9 @@ describe("MainNav", () => {
 
   describe("when user is logged out", () => {
     it("prompts the user to sign in", () => {
-      const wrapper = shallowMount(MainNav, createConfig());
+      const store = createStore();
+
+      const wrapper = shallowMount(MainNav, createConfig(store));
 
       const loginButton = wrapper.find("[data-test='login-button']");
       expect(loginButton.exists()).toBe(true);
@@ -49,7 +54,9 @@ describe("MainNav", () => {
 
   describe("when user logs in", () => {
     it("displays user profile picture", async () => {
-      const wrapper = shallowMount(MainNav, createConfig());
+      const store = createStore();
+
+      const wrapper = shallowMount(MainNav, createConfig(store));
 
       let profileImage = wrapper.find("[data-test='profile-image']");
       expect(profileImage.exists()).toBe(false);
@@ -62,7 +69,9 @@ describe("MainNav", () => {
     });
 
     it("displayz subnavigation menu with additional information", async () => {
-      const wrapper = shallowMount(MainNav, createConfig());
+      const store = createStore();
+
+      const wrapper = shallowMount(MainNav, createConfig(store));
 
       let subnav = wrapper.find("[data-test='subnav']");
       expect(subnav.exists()).toBe(false);
