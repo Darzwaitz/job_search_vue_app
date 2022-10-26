@@ -54,32 +54,29 @@ describe("MainNav", () => {
 
   describe("when user logs in", () => {
     it("displays user profile picture", async () => {
-      const store = createStore();
-
+      const store = createStore({
+        state() {
+          return {
+            isLoggedIn: true,
+          };
+        },
+      });
       const wrapper = shallowMount(MainNav, createConfig(store));
-
-      let profileImage = wrapper.find("[data-test='profile-image']");
-      expect(profileImage.exists()).toBe(false);
-
-      const loginButton = wrapper.find("[data-test='login-button']");
-      await loginButton.trigger("click");
-
-      profileImage = wrapper.find("[data-test='profile-image']");
+      const profileImage = wrapper.find("[data-test='profile-image']");
       expect(profileImage.exists()).toBe(true);
     });
 
     it("displayz subnavigation menu with additional information", async () => {
-      const store = createStore();
-
+      const store = createStore({
+        state() {
+          return {
+            isLoggedIn: true,
+          };
+        },
+      });
       const wrapper = shallowMount(MainNav, createConfig(store));
 
-      let subnav = wrapper.find("[data-test='subnav']");
-      expect(subnav.exists()).toBe(false);
-
-      const loginButton = wrapper.find("[data-test='login-button']");
-      await loginButton.trigger("click");
-
-      subnav = wrapper.find("[data-test='subnav']");
+      const subnav = wrapper.find("[data-test='subnav']");
       expect(subnav.exists()).toBe(true);
     });
   });
