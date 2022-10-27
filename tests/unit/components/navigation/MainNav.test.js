@@ -52,7 +52,7 @@ describe("MainNav", () => {
     });
   });
 
-  describe("when user logs in", () => {
+  describe("when user is logged in", () => {
     it("displays user profile picture", async () => {
       const store = createStore({
         state() {
@@ -79,5 +79,9 @@ describe("MainNav", () => {
       const subnav = wrapper.find("[data-test='subnav']");
       expect(subnav.exists()).toBe(true);
     });
+  });
+
+  describe("when users is logged out", () => {
+    it("issuez call to vuex to login user", () => {});
   });
 });
