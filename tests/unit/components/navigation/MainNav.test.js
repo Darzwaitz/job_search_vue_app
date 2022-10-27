@@ -82,6 +82,14 @@ describe("MainNav", () => {
   });
 
   describe("when users is logged out", () => {
-    it("issuez call to vuex to login user", () => {});
+    it("issuez call to vuex to login user", async () => {
+      const store = createStore();
+      const commit = jest.fn();
+      store.commit = commit;
+      const wrapper = shallowMount(MainNav, createConfig(store));
+      const loginButton = wrapper.find("[data-test='login-button']");
+
+      await loginButton.trigger("click");
+    });
   });
 });
