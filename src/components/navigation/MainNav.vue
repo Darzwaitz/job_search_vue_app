@@ -44,6 +44,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { mapMutations } from "vuex";
 import ActionButton from "@/components/shared/ActionButton.vue";
 import ProfileImage from "@/components/navigation/ProfileImage.vue";
 import Subnav from "@/components/navigation/Subnav.vue";
@@ -81,9 +82,10 @@ export default {
     ...mapState(["isLoggedIn"]),
   },
   methods: {
-    loginUser() {
-      this.$store.commit(LOGIN_USER);
-    },
+    // loginUser() {
+    //   this.$store.commit(LOGIN_USER);
+    // },
+    ...mapMutations([LOGIN_USER]),
   },
 };
 </script>
