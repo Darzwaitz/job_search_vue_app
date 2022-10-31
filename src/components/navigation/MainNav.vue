@@ -32,7 +32,7 @@
             v-else
             text="Sign In"
             data-test="login-button"
-            @click="loginUser"
+            @click="LOGIN_USER()"
           />
         </div>
       </div>
