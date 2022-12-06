@@ -1,6 +1,6 @@
 # Job search app V2
 
-This template should help get you started developing with Vue 3 in Vite.
+This is version 2 of the job search app - updated to implement unit tests using Vitest
 
 ## Recommended IDE Setup
 
