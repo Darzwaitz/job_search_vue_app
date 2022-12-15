@@ -6,7 +6,6 @@ describe("MainNav", () => {
   it("displays company name", () => {
     render(MainNav);
     const companyName = screen.getByText("Job Searcher");
-
     expect(companyName).toBeInTheDocument();
   });
 });

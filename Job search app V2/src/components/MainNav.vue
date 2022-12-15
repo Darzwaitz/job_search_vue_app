@@ -4,7 +4,36 @@
       <div
         class="mx-auto flex h-full flex-nowrap border-b border-solid border-brand-gray-1 px-8"
       >
-        <a class="flex h-full items-center text-xl" href="/">{{ company }}</a>
+        <a class="flex h-full items-center text-xl" :href="url">{{
+          company
+        }}</a>
+
+        <nav class="ml-12 h-full">
+          <ul class="flex h-full list-none">
+            <li class="h-full">
+              <a href="#" class="flex h-full items-center py-2.5">Teamz</a>
+            </li>
+            <li class="ml-9 h-full">
+              <a href="#" class="flex h-full items-center py-2.5">Locationz</a>
+            </li>
+            <li class="ml-9 h-full">
+              <a href="#" class="flex h-full items-center py-2.5"
+                >Life @ here</a
+              >
+            </li>
+            <li class="ml-9 h-full">
+              <a href="#" class="flex h-full items-center py-2.5"
+                >How we hire</a
+              >
+            </li>
+            <li class="ml-9 h-full">
+              <a href="#" class="flex h-full items-center py-2.5">Studentz</a>
+            </li>
+            <li class="ml-9 h-full">
+              <a href="#" class="flex h-full items-center py-2.5">Jobz</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
@@ -16,6 +45,7 @@ export default {
   data() {
     return {
       company: "Job Searcher",
+      url: "http://2manyartistz.com/",
     };
   },
 };
