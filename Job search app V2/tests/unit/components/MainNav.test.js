@@ -25,4 +25,15 @@ describe("MainNav", () => {
       "Jobz",
     ]);
   });
+
+  describe("when the user", () => {
+    it("displayz user profile picture", () => {
+      render(MainNav);
+
+      const profileImage = screen.queryByRole("img", {
+        name: /Profile image/i,
+      });
+      expect(profileImage).not.toBeInTheDocument();
+    });
+  });
 });
