@@ -11,7 +11,11 @@ export default {
 
   computed: {
     buttonClass() {
-      return this.type;
+      // return this.type;
+      // alt way
+      return {
+        [this.type]: true,
+      };
     },
   },
 };
