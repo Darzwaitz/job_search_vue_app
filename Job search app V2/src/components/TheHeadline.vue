@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>Build for everyone</h1>
+    <h1>{{ action }} for everyone</h1>
     <h2>Find your next projekt</h2>
   </section>
 </template>
@@ -10,11 +10,22 @@ export default {
   name: "TheHeadline",
   data() {
     return {
-      sample: "Hay",
+      action: "Build",
     };
   },
   created() {
-    console.log("created hook existz", this.sample);
+    this.changeTitle();
+  },
+  methods: {
+    changeTitle() {
+      setInterval(() => {
+        const actions = ["Build", "Create", "Design", "Code"];
+        const currentActionIndex = actions.indexOf(this.action);
+        const nextActionIndex = (currentActionIndex + 1) % 4;
+        const nextAction = actions[nextActionIndex];
+        this.action = nextAction;
+      }, 3000);
+    },
   },
 };
 </script>
