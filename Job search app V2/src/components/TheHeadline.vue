@@ -5,7 +5,7 @@
       <br />
       for everyone
     </h1>
-    <h2>Find your next projekt</h2>
+    <h2 class="text-3xl font-light">Find your next projekt</h2>
   </section>
 </template>
 
