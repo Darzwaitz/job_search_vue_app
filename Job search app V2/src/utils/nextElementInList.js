@@ -1,6 +1,6 @@
 const nextElementInList = (list, value) => {
   const currentValueIndex = list.indexOf(value);
-  const nextValueIndex = (currentValueIndex + 1) % 4;
+  const nextValueIndex = (currentValueIndex + 1) % list.length;
   const nextValue = list[nextValueIndex];
   return nextValue;
 };
