@@ -26,4 +26,10 @@ describe("TheHeadline", () => {
     expect(mock).toHaveBeenCalled();
     vi.useRealTimers();
   });
+
+  it("swapz action verb after interval", () => {
+    vi.useFakeTimers();
+    render(TheHeadline);
+    vi.advanceTimersToNextTimer();
+  });
 });
