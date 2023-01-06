@@ -31,5 +31,9 @@ describe("TheHeadline", () => {
     vi.useFakeTimers();
     render(TheHeadline);
     vi.advanceTimersToNextTimer();
+
+    const actionPhrase = screen.getByRole("heading", {
+      name: /create for everyone/i,
+    });
   });
 });
