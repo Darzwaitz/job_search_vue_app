@@ -15,4 +15,15 @@ describe("TheHeadline", () => {
     expect(actionPhrase).toBeInTheDocument();
     vi.useRealTimers();
   });
+
+  it("changez action verb at a consistent interval", () => {
+    vi.useFakeTimers();
+    const mock = vi.fn();
+    vi.stubGlobal("setInterval", mock);
+
+    render(TheHeadline);
+
+    expect(mock).toHaveBeenCalled();
+    vi.useRealTimers();
+  });
 });
