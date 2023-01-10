@@ -1,3 +1,4 @@
+import { nextTick } from "vue";
 import { render, screen } from "@testing-library/vue";
 
 import TheHeadline from "@/components/TheHeadline.vue";
@@ -26,13 +27,14 @@ describe("TheHeadline", () => {
     vi.useRealTimers();
   });
 
-  // it("swapz action verb after interval", () => {
-  //   vi.useFakeTimers();
-  //   render(TheHeadline);
-  //   vi.advanceTimersToNextTimer();
+  it("swapz action verb after interval", () => {
+    vi.useFakeTimers();
+    render(TheHeadline);
+    // simulate passage of one step in timer
+    vi.advanceTimersToNextTimer();
 
-  //   const actionPhrase = screen.getByRole("heading", {
-  //     name: /create for everyone/i,
-  //   });
-  // });
+    const actionPhrase = screen.getByRole("heading", {
+      name: /create for everyone/i,
+    });
+  });
 });
