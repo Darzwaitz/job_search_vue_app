@@ -27,14 +27,18 @@ describe("TheHeadline", () => {
     vi.useRealTimers();
   });
 
-  it("swapz action verb after interval", () => {
+  it("swapz action verb after interval", async () => {
     vi.useFakeTimers();
     render(TheHeadline);
     // simulate passage of one step in timer
     vi.advanceTimersToNextTimer();
 
+    await nextTick();
     const actionPhrase = screen.getByRole("heading", {
       name: /create for everyone/i,
     });
+
+    expect(actionPhrase).toBeInTheDocument();
+    vi.useRealTimers();
   });
 });
