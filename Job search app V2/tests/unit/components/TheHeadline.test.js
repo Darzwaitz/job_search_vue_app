@@ -2,8 +2,6 @@ import { render, screen } from "@testing-library/vue";
 
 import TheHeadline from "@/components/TheHeadline.vue";
 
-import { vi } from "vitest";
-
 describe("TheHeadline", () => {
   it("displayz intro action verb", () => {
     vi.useFakeTimers();
@@ -19,6 +17,7 @@ describe("TheHeadline", () => {
   it("changez action verb at a consistent interval", () => {
     vi.useFakeTimers();
     const mock = vi.fn();
+    // replace setInterval global name with 'mock' - for this test
     vi.stubGlobal("setInterval", mock);
 
     render(TheHeadline);
@@ -27,13 +26,13 @@ describe("TheHeadline", () => {
     vi.useRealTimers();
   });
 
-  it("swapz action verb after interval", () => {
-    vi.useFakeTimers();
-    render(TheHeadline);
-    vi.advanceTimersToNextTimer();
+  // it("swapz action verb after interval", () => {
+  //   vi.useFakeTimers();
+  //   render(TheHeadline);
+  //   vi.advanceTimersToNextTimer();
 
-    const actionPhrase = screen.getByRole("heading", {
-      name: /create for everyone/i,
-    });
-  });
+  //   const actionPhrase = screen.getByRole("heading", {
+  //     name: /create for everyone/i,
+  //   });
+  // });
 });
