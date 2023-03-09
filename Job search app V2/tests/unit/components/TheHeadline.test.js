@@ -41,4 +41,12 @@ describe("TheHeadline", () => {
     expect(actionPhrase).toBeInTheDocument();
     vi.useRealTimers();
   });
+
+  it("removez interval when component disappearz", () => {
+    vi.useFakeTimers();
+    const clearInterval = vi.fn();
+    vi.stubGlobal("clearInterval", clearInterval);
+
+    render(TheHeadline);
+  });
 });
