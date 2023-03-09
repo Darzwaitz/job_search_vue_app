@@ -5,6 +5,8 @@ import TheHeadline from "@/components/TheHeadline.vue";
 
 describe("TheHeadline", () => {
   it("displayz intro action verb", () => {
+    beforeEach(() => {});
+
     vi.useFakeTimers();
     render(TheHeadline);
 
