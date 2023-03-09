@@ -47,6 +47,10 @@ describe("TheHeadline", () => {
     const clearInterval = vi.fn();
     vi.stubGlobal("clearInterval", clearInterval);
 
-    render(TheHeadline);
+    const { unmount } = render(TheHeadline);
+    unmount();
+
+    expect(clearInterval).toHaveBeenCalled();
+    vi.unstubAllGlobals();
   });
 });
