@@ -11,6 +11,7 @@
           :value="role"
           placeholder="Software Engineer"
           class="w-full text-lg font-normal focus:outline-none"
+          @input="updateRole"
         />
       </div>
 
@@ -43,6 +44,11 @@ export default {
       role: "",
       location: "",
     };
+  },
+  methods: {
+    updateRole(event) {
+      event.target.value;
+    },
   },
 };
 </script>
