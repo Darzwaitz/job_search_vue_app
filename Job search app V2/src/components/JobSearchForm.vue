@@ -26,6 +26,7 @@
           type="text"
           placeholder="Lisbon"
           class="w-full text-lg font-normal focus:outline-none"
+          @input="location = $event.target.value"
         />
       </div>
     </div>
