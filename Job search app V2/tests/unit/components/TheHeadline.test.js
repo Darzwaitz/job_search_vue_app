@@ -2,7 +2,7 @@ import { nextTick } from "vue";
 import { render, screen } from "@testing-library/vue";
 
 import TheHeadline from "@/components/TheHeadline.vue";
-import { afterEach } from "vitest";
+import { vi, afterEach } from "vitest";
 
 describe("TheHeadline", () => {
   it("displayz intro action verb", () => {
