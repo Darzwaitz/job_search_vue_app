@@ -6,7 +6,11 @@
     <div class="flex h-full flex-1 flex-nowrap text-base font-light">
       <div class="relative flex h-full flex-1 items-center pr-3">
         <label for="" class="absolute left-0 -top-10">Role</label>
-        <text-input placeholder="Software Engineer" />
+        <!-- hyphenated method name here, based on Vue style guide - original is handleInput -->
+        <text-input
+          placeholder="Software Engineer"
+          @handle-input="updateRole"
+        />
       </div>
 
       <span
@@ -35,6 +39,11 @@ export default {
       role: "",
       location: "",
     };
+  },
+  methods: {
+    updateRole(payload) {
+      console.log(payload);
+    },
   },
 };
 </script>
