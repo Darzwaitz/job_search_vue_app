@@ -7,11 +7,7 @@
       <div class="relative flex h-full flex-1 items-center pr-3">
         <label for="" class="absolute left-0 -top-10">Role</label>
         <!-- hyphenated method name here, based on Vue style guide - original is handleInput -->
-        <text-input
-          placeholder="Software Engineer"
-          :value="role"
-          @handle-input="role = $event"
-        />
+        <text-input v-model="role" placeholder="Software Engineer" />
       </div>
 
       <span
@@ -21,11 +17,7 @@
 
       <div class="relative flex h-full flex-1 items-center pl-3">
         <label for="" class="absolute left-0 -top-10">Where?</label>
-        <text-input
-          placeholder="Lisbon"
-          :value="location"
-          @handle-input="updateLocation"
-        />
+        <text-input v-model="location" placeholder="Lisbon" />
       </div>
     </div>
 
