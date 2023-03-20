@@ -9,6 +9,7 @@
         <!-- hyphenated method name here, based on Vue style guide - original is handleInput -->
         <text-input
           placeholder="Software Engineer"
+          :value="role"
           @handle-input="role = $event"
         />
       </div>
@@ -20,7 +21,11 @@
 
       <div class="relative flex h-full flex-1 items-center pl-3">
         <label for="" class="absolute left-0 -top-10">Where?</label>
-        <text-input placeholder="Lisbon" @handle-input="updateLocation" />
+        <text-input
+          placeholder="Lisbon"
+          :value="location"
+          @handle-input="updateLocation"
+        />
       </div>
     </div>
 
@@ -33,6 +38,7 @@ import ActionButton from "@/components/Shared/ActionButton.vue";
 import TextInput from "@/components/Shared/TextInput.vue";
 export default {
   name: "JobSearchForm",
+
   components: { ActionButton, TextInput },
   data() {
     return {
@@ -41,9 +47,6 @@ export default {
     };
   },
   methods: {
-    updateRole(payload) {
-      this.role = payload;
-    },
     updateLocation(payload) {
       this.location = payload;
     },
