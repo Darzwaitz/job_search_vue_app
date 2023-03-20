@@ -9,7 +9,7 @@
         <!-- hyphenated method name here, based on Vue style guide - original is handleInput -->
         <text-input
           placeholder="Software Engineer"
-          @handle-input="updateRole"
+          @handle-input="role = $event"
         />
       </div>
 
@@ -20,7 +20,7 @@
 
       <div class="relative flex h-full flex-1 items-center pl-3">
         <label for="" class="absolute left-0 -top-10">Where?</label>
-        <text-input placeholder="Lisbon" />
+        <text-input placeholder="Lisbon" @handle-input="updateLocation" />
       </div>
     </div>
 
@@ -42,7 +42,10 @@ export default {
   },
   methods: {
     updateRole(payload) {
-      console.log(payload);
+      this.role = payload;
+    },
+    updateLocation(payload) {
+      this.location = payload;
     },
   },
 };
