@@ -12,7 +12,8 @@ describe("TextInput", () => {
     });
     const input = screen.getByRole("textbox");
     console.log(emitted());
-    await userEvent.type(input, "N");
-    // emitted()["update:modelValue"];
+    await userEvent.type(input, "NY");
+    const messages = emitted()["update:modelValue"];
+    expect(messages).toEqual([["N"], ["NY"]]);
   });
 });
