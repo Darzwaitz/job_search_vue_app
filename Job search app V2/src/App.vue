@@ -1,5 +1,6 @@
 <template>
   <main-nav />
+  <!-- router-view watches index.js in router folder  -->
   <router-view />
 </template>
 
