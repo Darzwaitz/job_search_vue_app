@@ -10,6 +10,7 @@ describe("MainNav", () => {
       global: {
         stubs: {
           FontAwesomeIcon: true,
+          // RouterLinkStub here is a stand-in component coming from test-utils, and is the preferred method
           RouterLink: RouterLinkStub,
         },
       },
