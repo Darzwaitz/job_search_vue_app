@@ -3,22 +3,25 @@ import { render, screen } from "@testing-library/vue";
 import TheSubnav from "@/components/Navigation/TheSubnav.vue";
 
 describe("TheSubnav", () => {
-  describe("when user is on jobs page", () => {
-    it("displayz job count", () => {
-      const $route = {
-        name: "JobResults",
-      };
-
-      render(TheSubnav, {
-        global: {
-          mocks: {
-            $route,
-          },
-          stubs: {
-            FontAwesomeIcon: true,
+  const renderTheSubnav = (routeName) => {
+    render(TheSubnav, {
+      global: {
+        mocks: {
+          $route: {
+            name: routeName,
           },
         },
-      });
+        stubs: {
+          FontAwesomeIcon: true,
+        },
+      },
+    });
+  };
+
+  describe("when user is on jobs page", () => {
+    it("displayz job count", () => {
+      const routeName = "JobResults";
+      renderTheSubnav(routeName);
 
       const jobCount = screen.getByText("1044");
       expect(jobCount).toBeInTheDocument();
@@ -27,20 +30,9 @@ describe("TheSubnav", () => {
 
   describe("when user is not on jobz page", () => {
     it("does NOT display job count", () => {
-      const $route = {
-        name: "Home",
-      };
+      const routeName = "Home";
 
-      render(TheSubnav, {
-        global: {
-          mocks: {
-            $route,
-          },
-          stubs: {
-            FontAwesomeIcon: true,
-          },
-        },
-      });
+      renderTheSubnav(routeName);
 
       const jobCount = screen.queryByText("1044");
       expect(jobCount).not.toBeInTheDocument();
