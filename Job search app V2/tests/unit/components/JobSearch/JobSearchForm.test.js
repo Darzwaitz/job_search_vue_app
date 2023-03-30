@@ -35,6 +35,11 @@ describe("JobSearchForm", () => {
         name: /search/i,
       });
       await userEvent.click(submitButton);
+
+      expect(push).toHaveBeenCalledWith({
+        name: "JobResults",
+        query: { role: "Vue Developer", location: "Dallas" },
+      });
     });
   });
 });
