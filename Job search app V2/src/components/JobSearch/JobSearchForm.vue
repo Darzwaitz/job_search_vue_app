@@ -6,9 +6,9 @@
     <font-awesome-icon :icon="['fas', 'search']" class="ml-4 mr-3" />
     <div class="flex h-full flex-1 flex-nowrap text-base font-light">
       <div class="relative flex h-full flex-1 items-center pr-3">
-        <label for="" class="absolute left-0 -top-10">Role</label>
+        <label for="role" class="absolute left-0 -top-10">Role</label>
         <!-- hyphenated method name here, based on Vue style guide - original is handleInput -->
-        <text-input v-model="role" placeholder="Software Engineer" />
+        <text-input id="role" v-model="role" placeholder="Software Engineer" />
       </div>
 
       <span
@@ -17,8 +17,8 @@
       >
 
       <div class="relative flex h-full flex-1 items-center pl-3">
-        <label for="" class="absolute left-0 -top-10">Where?</label>
-        <text-input v-model="location" placeholder="Lisbon" />
+        <label for="location" class="absolute left-0 -top-10">Where?</label>
+        <text-input id="location" v-model="location" placeholder="Lisbon" />
       </div>
     </div>
 
