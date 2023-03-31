@@ -1,6 +1,8 @@
 <template>
-  <job-filters-sidebar></job-filters-sidebar>
-  <job-listings></job-listings>
+  <div class="flex w-full flex-row flex-nowrap">
+    <job-filters-sidebar></job-filters-sidebar>
+    <job-listings></job-listings>
+  </div>
 </template>
 
 <script>
