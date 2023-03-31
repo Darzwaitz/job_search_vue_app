@@ -1,9 +1,14 @@
 <template>
-  <h1 class="text-6xl font-bold">Job Resultz Page</h1>
+  <job-filters-sidebar></job-filters-sidebar>
 </template>
 
 <script>
+import JobFiltersSidebar from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebar.vue";
+
 export default {
   name: "JobResultsView",
+  components: {
+    JobFiltersSidebar,
+  },
 };
 </script>
