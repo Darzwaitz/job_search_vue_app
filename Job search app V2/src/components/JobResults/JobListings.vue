@@ -1,5 +1,17 @@
 <template>
-  <main class="flex-auto bg-brand-gray-2 p-8">Job Listingz comp.</main>
+  <main class="flex-auto bg-brand-gray-2 p-8">
+    <ol>
+      <li class="mb-7">
+        <router-link
+          to="/jobs/results/1"
+          class="mx-auto block rounded border border-solid border-brand-gray-2 bg-white hover:shadow-gray"
+        >
+          <div class="mx-8 border-b border-solid border-brand-gray-2 pt-5 pb-2">
+            <h2 class="mb-2 text-2xl"></h2></div
+        ></router-link>
+      </li>
+    </ol>
+  </main>
 </template>
 
 <script>
