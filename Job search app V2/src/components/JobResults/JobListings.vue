@@ -13,12 +13,31 @@
                 <span>Company</span>
               </div>
 
-              <div class="">
+              <div>
                 <span>San Francisco, USA</span>
               </div>
             </div>
-          </div></router-link
-        >
+          </div>
+
+          <div class="px-8 py-4">
+            <div>
+              <h3 class="mt-1 mb-2">Qualifications:</h3>
+              <div>
+                <ul class="list-disc pl-8">
+                  <li>Bachelors degree or equiv.</li>
+                  <li>5 yearz experience</li>
+                  <li>Experience analysing data through querying databases</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-2 text-center">
+              <router-link to="/jobs/results/1" class="text-brand-blue-1"
+                >Expand</router-link
+              >
+            </div>
+          </div>
+        </router-link>
       </li>
     </ol>
   </main>
