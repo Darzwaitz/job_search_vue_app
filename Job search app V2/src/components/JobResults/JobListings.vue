@@ -9,9 +9,15 @@
 </template>
 
 <script>
+// import axios from "axios";
 import JobListing from "./JobListing.vue";
 export default {
   name: "JobResultsView",
   components: { JobListing },
+  data() {
+    return {
+      jobs: [],
+    };
+  },
 };
 </script>
