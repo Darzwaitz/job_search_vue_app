@@ -4,7 +4,13 @@ import JobListing from "@/components/JobResults/JobListing.vue";
 import { RouterLinkStub } from "@vue/test-utils";
 
 describe("JobListing", () => {
-  it("renderz job title", () => {
+  const createJobProps = (jobProps = {}) => ({
+    title: "Vue Developer",
+    organization: "AirBnB",
+    ...jobProps,
+  });
+
+  const renderJobListing = (jobProps) => {
     render(JobListing, {
       global: {
         stubs: {
@@ -13,26 +19,23 @@ describe("JobListing", () => {
       },
       props: {
         job: {
-          title: "Vue Developer",
+          ...jobProps,
         },
       },
     });
-    expect(screen.getByText("Vue Developer")).toBeInTheDocument();
+  };
+
+  it("renderz job title", () => {
+    const jobProps = createJobProps({ title: "Vue Programmer" });
+    renderJobListing(jobProps);
+    expect(screen.getByText("Vue Programmer")).toBeInTheDocument();
   });
 
   it("renderz job qualification", () => {
-    render(JobListing, {
-      global: {
-        stubs: {
-          "router-link": RouterLinkStub,
-        },
-      },
-      props: {
-        job: {
-          organization: "AirBnB",
-        },
-      },
-    });
-    expect(screen.getByText("AirBnB")).toBeInTheDocument();
+    const jobProps = createJobProps({ organization: "Samsung" });
+
+    renderJobListing(jobProps);
+
+    expect(screen.getByText("Samsung")).toBeInTheDocument();
   });
 });
