@@ -31,11 +31,31 @@ describe("JobListing", () => {
     expect(screen.getByText("Vue Programmer")).toBeInTheDocument();
   });
 
-  it("renderz job qualification", () => {
+  it("renderz job organization", () => {
     const jobProps = createJobProps({ organization: "Samsung" });
 
     renderJobListing(jobProps);
 
     expect(screen.getByText("Samsung")).toBeInTheDocument();
+  });
+
+  it("renderz job locationz", () => {
+    const jobProps = createJobProps({ locations: ["Dublin", "Glasgow"] });
+
+    renderJobListing(jobProps);
+
+    expect(screen.getByText("Dublin")).toBeInTheDocument();
+    expect(screen.getByText("Glasgow")).toBeInTheDocument();
+  });
+
+  it("renderz job qualificationz", () => {
+    const jobProps = createJobProps({
+      minimumQualifications: ["Code", "Develop"],
+    });
+
+    renderJobListing(jobProps);
+
+    expect(screen.getByText("Code")).toBeInTheDocument();
+    expect(screen.getByText("Develop")).toBeInTheDocument();
   });
 });
