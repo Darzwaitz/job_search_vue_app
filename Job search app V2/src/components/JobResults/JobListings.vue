@@ -8,9 +8,10 @@
 
 <script>
 import axios from "axios";
-import JobListing from "./JobListing.vue";
+import JobListing from "@/components/JobResults/JobListing.vue";
+
 export default {
-  name: "JobResultsView",
+  name: "JobListings",
   components: { JobListing },
   data() {
     return {
