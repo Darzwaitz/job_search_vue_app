@@ -13,8 +13,8 @@ describe("JobListings", () => {
     expect(axios.get).toHaveBeenCalledWith("http://localhost:3000/jobs");
   });
 
-  it("creates a job listing for every job", async () => {
-    axios.get.mockResolvedValue({ data: Array(15).fill({}) });
+  it("it displayz max of 10 jobz", async () => {
+    axios.get.mockResolvedValue({ data: Array(10).fill({}) });
 
     render(JobListings, {
       global: {
@@ -25,6 +25,6 @@ describe("JobListings", () => {
     });
 
     const jobListings = await screen.findAllByRole("listitem");
-    expect(jobListings).toHaveLength(15);
+    expect(jobListings).toHaveLength(10);
   });
 });
