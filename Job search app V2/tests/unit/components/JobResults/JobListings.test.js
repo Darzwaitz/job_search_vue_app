@@ -66,4 +66,30 @@ describe("JobListings", () => {
       expect(screen.getByText("Page 3")).toBeInTheDocument();
     });
   });
+
+  describe("when user is on first page", () => {
+    it("does not show link to previous page", async () => {
+      axios.get.mockResolvedValue({ data: Array(15).fill({}) });
+      const queryParams = { page: "1" };
+      const $route = createRoute(queryParams);
+      renderJobListings($route);
+
+      await screen.findAllByRole("listitem");
+      const previousLink = screen.queryByRole("link", {
+        name: /previous/i,
+      });
+      expect(previousLink).not.toBeInTheDocument();
+    });
+
+    it("showz link to the next page", async () => {
+      axios.get.mockResolvedValue({ data: Array(15).fill({}) });
+      const queryParams = { page: "1" };
+      const $route = createRoute(queryParams);
+      renderJobListings($route);
+
+      await screen.findAllByRole("listitem");
+      const nextLink = screen.queryByRole("link", { name: /next/i });
+      expect(nextLink).not.toBeInTheDocument();
+    });
+  });
 });
