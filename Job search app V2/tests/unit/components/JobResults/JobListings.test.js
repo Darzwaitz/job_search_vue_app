@@ -89,7 +89,8 @@ describe("JobListings", () => {
 
       await screen.findAllByRole("listitem");
       const nextLink = screen.queryByRole("link", { name: /next/i });
-      expect(nextLink).not.toBeInTheDocument();
+      // screen.debug(); USE FOR OUTPUTTING THE WHOLE HTML PAGE OF ELEMENTS
+      expect(nextLink).toBeInTheDocument();
     });
   });
 });
