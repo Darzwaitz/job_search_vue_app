@@ -32,7 +32,7 @@ describe("JobListings", () => {
     const $route = createRoute();
     renderJobListings($route);
 
-    expect(axios.get).toHaveBeenCalledWith("http://localhost:3000/jobs");
+    expect(axios.get).toHaveBeenCalledWith("http://mytestsite.com/jobs");
   });
 
   it("it displayz max of 10 jobz", async () => {

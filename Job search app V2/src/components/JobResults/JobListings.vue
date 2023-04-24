@@ -65,7 +65,10 @@ export default {
     },
   },
   async mounted() {
-    const response = await axios.get("http://localhost:3000/jobs");
+    // NB WHEN CALLED IN A COMPONENT - 'VITE' needs to be used as part of name, at the start
+    const baseUrl = import.meta.env.VITE_APP_API_URL;
+    // const response = await axios.get("http://localhost:3000/jobs");
+    const response = await axios.get(`${baseUrl}/jobs`);
     this.jobs = response.data;
   },
 };
