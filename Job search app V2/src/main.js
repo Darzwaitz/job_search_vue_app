@@ -11,7 +11,7 @@ import App from "@/App.vue";
 
 library.add(faSearch);
 
-const pinia = createPinia;
+const pinia = createPinia();
 
 createApp(App)
   .use(pinia)

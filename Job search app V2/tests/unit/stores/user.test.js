@@ -13,6 +13,9 @@ describe("state", () => {
 });
 
 describe("loginUser", () => {
+  beforeEach(() => {
+    setActivePinia(createPinia());
+  });
   it("logz the user in", () => {
     const store = useUserStore();
     store.loginUser();
