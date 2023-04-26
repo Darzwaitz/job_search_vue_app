@@ -26,17 +26,17 @@
           </ul>
         </nav>
         <div class="ml-auto flex h-full items-center">
-          <profile-image v-if="userStore.isLoggedIn" />
-          <action-button v-else text="Sign In" @click="userStore.loginUser" />
+          <profile-image v-if="isLoggedIn" />
+          <action-button v-else text="Sign In" @click="loginUser" />
         </div>
       </div>
-      <the-subnav v-if="userStore.isLoggedIn" />
+      <the-subnav v-if="isLoggedIn" />
     </div>
   </header>
 </template>
 
 <script>
-import { mapStores } from "pinia";
+import { mapActions, mapState } from "pinia";
 
 import { useUserStore } from "@/stores/user";
 
@@ -64,14 +64,17 @@ export default {
     };
   },
   computed: {
-    ...mapStores(useUserStore),
+    ...mapState(useUserStore, ["isLoggedIn"]), // array of strings, representing which properties from the original function/component to bring in - isLoggedIn is on useUserStore
     headerHeightClass() {
       // userStore name is created by pinia in store file - concatenates defined name in defineStore() method
       return {
-        "h-16": !this.userStore.isLoggedIn,
-        "h-32": this.userStore.isLoggedIn,
+        "h-16": !this.isLoggedIn,
+        "h-32": this.isLoggedIn,
       };
     },
+  },
+  methods: {
+    ...mapActions(useUserStore, ["loginUser"]),
   },
 };
 </script>
