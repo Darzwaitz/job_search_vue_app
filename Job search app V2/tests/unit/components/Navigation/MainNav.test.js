@@ -1,17 +1,23 @@
 import { render, screen } from "@testing-library/vue";
 import userEvent from "@testing-library/user-event";
 import { RouterLinkStub } from "@vue/test-utils";
+import { createTestingPinia } from "@pinia/testing";
 
 import MainNav from "@/components/Navigation/MainNav.vue";
 
 describe("MainNav", () => {
-  const $route = {
-    name: "Home",
-  };
-
   const renderMainNav = () => {
+    const pinia = createTestingPinia({
+      stubActions: false,
+    });
+
+    const $route = {
+      name: "Home",
+    };
+
     render(MainNav, {
       global: {
+        plugins: [pinia],
         mocks: {
           $route,
         },
