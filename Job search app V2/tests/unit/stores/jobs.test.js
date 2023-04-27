@@ -6,4 +6,9 @@ describe("state", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
+
+  it("storez job listingz", () => {
+    const store = useJobsStore();
+    expect(store.jobs).toEqual([]);
+  });
 });
