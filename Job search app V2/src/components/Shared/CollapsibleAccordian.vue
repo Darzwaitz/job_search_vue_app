@@ -3,7 +3,10 @@
     <div
       class="flex cursor-pointer flex-wrap items-center justify-between"
       @click="open"
-    ></div>
+    >
+      <h3 class="mt-5 w-full">Organizations</h3>
+      <font-awesome-icon :icon="caretIcon" />
+    </div>
 
     <div v-if="isOpen" class="">Child</div>
   </div>
@@ -16,6 +19,11 @@ export default {
     return {
       isOpen: false,
     };
+  },
+  computed: {
+    caretIcon() {
+      return this.isOpen ? ["fas", "angle-up"] : ["fas", "angle-down"];
+    },
   },
   methods: {
     open() {
