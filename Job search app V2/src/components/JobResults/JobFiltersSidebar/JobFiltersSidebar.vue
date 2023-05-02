@@ -9,7 +9,13 @@
           <action-button text="Clear Filters" type="secondary" />
         </div>
       </div>
-      <collapsible-accordian>Custom content<collapsible-accordian />
+      <collapsible-accordian>
+      <div class="mt-5">
+        <fieldset>
+          <ul class="flex flex-row flex-wrap"></ul>
+        </fieldset>
+      </div>
+      <collapsible-accordian />
     </section>
   </div>
 </template>
