@@ -12,7 +12,10 @@
       <collapsible-accordian>
       <div class="mt-5">
         <fieldset>
-          <ul class="flex flex-row flex-wrap"></ul>
+          <ul class="flex flex-row flex-wrap">
+            <li class="h-8 w-1/2">
+            <input id="VueTube" type="checkbox"></li>
+          </ul>
         </fieldset>
       </div>
       <collapsible-accordian />
