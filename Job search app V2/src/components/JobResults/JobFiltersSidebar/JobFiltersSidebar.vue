@@ -9,7 +9,7 @@
           <action-button text="Clear Filters" type="secondary" />
         </div>
       </div>
-      <collapsible-accordian />
+      <collapsible-accordian>Custom content<collapsible-accordian />
     </section>
   </div>
 </template>
