@@ -10,7 +10,9 @@
     </div>
 
     <div v-if="isOpen" class="mt-5 w-full">
-      <slot></slot>
+      <slot>
+        <p>No content - default msg</p>
+      </slot>
     </div>
   </div>
 </template>
