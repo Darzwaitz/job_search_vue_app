@@ -14,30 +14,7 @@
         Temp content
       </collapsible-accordian>
 
-      <collapsible-accordian header="Organizations">
-        <div class="mt-5">
-          <fieldset>
-            <ul class="flex flex-row flex-wrap">
-              <li class="h-8 w-1/2">
-                <input id="VueTube" type="checkbox" class="mr-3" />
-                <label for="VueTube">VueTube</label>
-              </li>
-              <li class="h-8 w-1/2">
-                <input id="Between Vue" type="checkbox" class="mr-3" />
-                <label for="Between Vue">Between Vue</label>
-              </li>
-              <li class="h-8 w-1/2">
-                <input id="Et Vue" type="checkbox" class="mr-3" />
-                <label for="Et Vue">Et Vue</label>
-              </li>
-              <li class="h-8 w-1/2">
-                <input id="Vue unt whose army" type="checkbox" class="mr-3" />
-                <label for="Vue unt whose army">Vue unt whose army</label>
-              </li>
-            </ul>
-          </fieldset>
-        </div>
-      </collapsible-accordian>
+      <job-filters-sidebar-organizations />
     </section>
   </div>
 </template>
@@ -45,9 +22,14 @@
 <script>
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import CollapsibleAccordian from "@/components/Shared/CollapsibleAccordian.vue";
+import JobFiltersSidebarOrganizations from "@/JobResults/JobFiltersSidebar/";
 
 export default {
   name: "JobFiltersSidebar",
-  components: { ActionButton, CollapsibleAccordian },
+  components: {
+    ActionButton,
+    CollapsibleAccordian,
+    JobFiltersSidebarOrganizations,
+  },
 };
 </script>
