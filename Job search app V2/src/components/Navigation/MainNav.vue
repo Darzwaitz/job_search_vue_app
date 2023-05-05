@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       menuItems: [
-        { text: "Teamz", url: "/" },
+        { text: "Teamz", url: "/teams" },
         { text: "Locationz", url: "/" },
         { text: "Life @ here", url: "/" },
         { text: "How we hire", url: "/" },
