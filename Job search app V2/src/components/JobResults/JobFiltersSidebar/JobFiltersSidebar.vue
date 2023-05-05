@@ -22,7 +22,7 @@
 <script>
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import CollapsibleAccordian from "@/components/Shared/CollapsibleAccordian.vue";
-import JobFiltersSidebarOrganizations from "@/JobResults/JobFiltersSidebar/";
+import JobFiltersSidebarOrganizations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations.vue";
 
 export default {
   name: "JobFiltersSidebar",
