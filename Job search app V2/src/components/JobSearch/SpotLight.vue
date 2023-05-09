@@ -20,7 +20,7 @@ export default {
     const baseUrl = import.meta.env.VITE_APP_API_URL;
     const url = `${baseUrl}/spotLights`;
     const response = await axios.get(url);
-    this.spotLights = response.data;
+    this.spotlights = response.data;
   },
 };
 </script>
