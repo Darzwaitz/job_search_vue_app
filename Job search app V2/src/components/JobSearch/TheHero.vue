@@ -27,7 +27,22 @@
         <router-link
           to="/jobs/results"
           class="mx-5 flex h-96 w-72 flex-col rounded-lg border bg-brand-gray-2"
-        ></router-link>
+        >
+          <img
+            class="object-contain"
+            :src="slotProps.spotlight.img"
+            alt="slotProps.spotlight.title"
+          />
+          <div class="mt-3 h-48 px-6 py-4">
+            <h3 class="text-lg font-medium">{{ slotProps.spotlight.title }}</h3>
+            <p class="mt-3 text-sm">{{ slotProps.spotlight.description }}</p>
+          </div>
+          <router-link
+            class="px-6 pb-4 text-sm text-brand-blue-1"
+            to="/jobs/results"
+            >See jobs</router-link
+          >
+        </router-link>
       </template>
     </spot-light>
   </main>
